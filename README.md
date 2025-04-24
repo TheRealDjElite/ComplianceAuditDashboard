@@ -29,7 +29,7 @@ Built for remote Medicaid/SNAP/TANF teams that need an accurate and auditable wa
 
 ---
 
-Made with 💡 by #EliteTheOctoDog 🐙🐶 [LinkedIn →](https://linkedin.com/in/JoeNetherland)
+Made with 💡 by #EliteTheOctoDog 🐙🐶™ [LinkedIn →](https://linkedin.com/in/JoeNetherland)
 
 <details>
 <summary>📘 Instructions for Non-Technical Users (Click to Expand)</summary>
