@@ -29,7 +29,8 @@ Built for remote Medicaid/SNAP/TANF teams that need an accurate and auditable wa
 
 ---
 
-Made with 💡 by #EliteTheOctoDog 🐙🐶™ [LinkedIn →](https://linkedin.com/in/JoeNetherland)
+Made with 💡 by **Joseph Netherland (TheRealDjElite)**  
+[LinkedIn →](https://linkedin.com/in/JoeNetherland)
 
 <details>
 <summary>📘 Instructions for Non-Technical Users (Click to Expand)</summary>
@@ -75,6 +76,4 @@ This tool helps you audit eligibility case data for SNAP, TANF, or Medicaid by r
 ---
 
 ### 👩‍💼 Example Use
-You’re reviewing Medicaid cases for compliance. After setting up the database and importing your data, you run the audit queries to flag any cases with missing or invalid data. You can then generate reports or further investigate flagged cases.
-
-</details>
+You’re reviewing Medicaid cases for compliance. After setting up the database and importing your data, you run the audit queries to flag any cases with missing or invalid
