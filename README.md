@@ -1,5 +1,7 @@
 # Compliance Audit Dashboard
 
+_Applied learning prototype. Built with SQL and Excel using AI assistance. Not a production system._
+
 A SQL-based tool to help audit eligibility cases for SNAP, TANF, and Medicaid programs, ensuring data accuracy and compliance.
 
 ## 🔍 What It Does
@@ -77,3 +79,4 @@ This tool helps you audit eligibility case data for SNAP, TANF, or Medicaid by r
 
 ### 👩‍💼 Example Use
 You’re reviewing Medicaid cases for compliance. After setting up the database and importing your data, you run the audit queries to flag any cases with missing or invalid
+
