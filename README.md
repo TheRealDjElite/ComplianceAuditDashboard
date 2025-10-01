@@ -1,14 +1,14 @@
 # Compliance Audit Dashboard
 
-⁂ _Applied learning prototype. Built with SQL and Excel using AI assistance. Not a production system._
+⚠️ Applied learning prototype. Built with SQL and Excel as a learning project. Not for production use.
 
-A SQL-based tool to help audit eligibility cases for SNAP, TANF, and Medicaid programs, ensuring data accuracy and compliance.
+A SQL-based tool that demonstrates how to audit case data for compliance. Reads CSV/Excel inputs into a database, applies SQL queries to check data quality, and generates simple audit results.
 
 ## 🔍 What It Does
-- Tracks eligibility case data across public programs
-- Flags non-compliant cases for review using SQL queries
-- Supports both MySQL and PostgreSQL databases
-- Helps remote teams stay organized and audit-ready
+- Store and organize case data using a SQL schema
+- Run audit queries to flag missing or invalid records
+- Support MySQL or PostgreSQL for flexibility
+- Provide simple reports that can help QA teams review compliance
 
 ## 🧰 Tools Used
 - SQL (MySQL or PostgreSQL)
@@ -27,7 +27,7 @@ A SQL-based tool to help audit eligibility cases for SNAP, TANF, and Medicaid pr
 4. Use **`queries.sql`** to query and audit case data for compliance.
 
 ## ✅ Use Case
-Built for remote Medicaid/SNAP/TANF teams that need an accurate and auditable way to review eligibility cases and ensure compliance with program guidelines.
+Designed as a demo for auditing structured case data. Shows how SQL can be applied for quality checks and compliance reviews in a portable, audit-ready format.
 
 ---
 
@@ -79,5 +79,6 @@ This tool helps you audit eligibility case data for SNAP, TANF, or Medicaid by r
 
 ### 👩‍💼 Example Use
 You’re reviewing Medicaid cases for compliance. After setting up the database and importing your data, you run the audit queries to flag any cases with missing or invalid
+
 
 
