@@ -1,6 +1,6 @@
 # Compliance Audit Dashboard
 
-⚠️ Applied learning prototype. Built with SQL and Excel as a learning project. Not for production use.
+⚠️ Skill-building project demonstrating applied SQL and Excel for compliance audit workflows and case flagging.
 
 A SQL-based tool that demonstrates how to audit case data for compliance. Reads CSV/Excel inputs into a database, applies SQL queries to check data quality, and generates simple audit results.
 
@@ -79,6 +79,7 @@ This tool helps you audit eligibility case data for SNAP, TANF, or Medicaid by r
 
 ### 👩‍💼 Example Use
 You’re reviewing Medicaid cases for compliance. After setting up the database and importing your data, you run the audit queries to flag any cases with missing or invalid
+
 
 
 
