@@ -13,7 +13,7 @@ A SQL-based tool that demonstrates how to audit case data for compliance. Reads 
 
 ## 🧰 Tools Used
 
-- SQL (MySQL or PostgreSQL) -- AI-assisted
+- SQL (MySQL or PostgreSQL, AI-assisted)
 - Database Schema
 - SQL Queries for Auditing and Reporting
 
