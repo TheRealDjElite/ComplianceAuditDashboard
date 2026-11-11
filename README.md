@@ -19,6 +19,12 @@ Uses a relational schema to store case records, then runs audit queries to surfa
 
 `insert_data.sql` loads 12 records: 5 clean records and 7 with intentional errors (missing or blank names, missing program, misspelled status, invalid program, approved with no review date, and a future review date). Each error is caught by one of the audit queries. A pending case with no review date is included as a valid record and is not flagged.
 
+## 📊 Sample Output
+
+Running the audit queries on the sample data catches all 7 intentional errors. Case 1005 (pending, no review date yet) is valid and not flagged.
+
+![Audit query results from the sample data](images/audit_results.png)
+
 ## 🧰 Tools Used
 
 - SQL (MySQL, AI-assisted development)
@@ -30,6 +36,7 @@ Uses a relational schema to store case records, then runs audit queries to surfa
 - `schema.sql` - Creates the database and the case records table (safe to re-run)
 - `insert_data.sql` - Loads a sample dataset with intentional errors
 - `queries.sql` - Audit, data integrity, and reporting queries
+- `images/audit_results.png` - Screenshot of the audit query results from the sample data
 
 ## ▶ How to Use It
 
