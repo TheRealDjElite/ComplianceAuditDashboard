@@ -36,6 +36,7 @@ Running the audit queries on the sample data catches all 7 intentional errors. C
 - `schema.sql` - Creates the database and the case records table (safe to re-run)
 - `insert_data.sql` - Loads a sample dataset with intentional errors
 - `queries.sql` - Audit, data integrity, and reporting queries
+- [`REQUIREMENTS.md`](REQUIREMENTS.md) - User stories, acceptance criteria, and traceability for each audit query
 - `images/audit_results.png` - Screenshot of the audit query results from the sample data
 
 ## ▶ How to Use It
