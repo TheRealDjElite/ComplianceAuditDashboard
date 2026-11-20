@@ -102,3 +102,4 @@ Acceptance criteria:
 - **Status and program checks are case-insensitive.** MySQL's default collation treats "approved" and "Approved" as the same value, so lowercase entries pass as valid.
 - **Audit_Flag values come from the source data.** No rule in this project decides which cases get flagged for audit.
 - **US-06 depends on the current date.** Test case 1012 stops failing after June 1, 2030, and needs a later date at that point.
+- **No visual dashboard yet.** Results are query output. A Power BI view of audit flags and case counts by program is planned.

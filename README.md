@@ -1,8 +1,8 @@
 # 📊 Compliance Audit Dashboard
 
-SQL-based audit tracking and data integrity checks for structured case records, designed to support QA and compliance-style review.
+SQL audit queries for checking case records before a compliance review. Built for QA reviewers and auditors who need flagged cases, missing fields, and invalid values pulled into one set of results before records move forward.
 
-Uses a relational schema to store case records, then runs audit queries to surface flagged cases, catch missing or invalid data, and summarize case counts by program and status.
+A MySQL schema stores the case records, eight queries run the audit and integrity checks, and the results show which records fail each rule, plus case counts by program and status. Every query traces back to a user story in `REQUIREMENTS.md`.
 
 ## 🔍 What It Does
 
@@ -47,4 +47,4 @@ Running the audit queries on the sample data catches all 7 intentional errors. C
 
 ## 📌 Purpose
 
-Built for structured environments that need SQL-based audit tracking and data integrity checks. Focuses on catching missing or invalid case data early, making flagged records easy to find, and supporting consistent review of case data.
+Built from audit-readiness work in regulated case review, where a missing field or bad status value turns into an audit finding if nobody catches the record first. Running these queries before review puts every failing record in front of the reviewer, listed under the rule each record fails.
