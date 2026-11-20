@@ -25,6 +25,10 @@ Running the audit queries on the sample data catches all 7 intentional errors. C
 
 ![Audit query results from the sample data](images/audit_results.png)
 
+## 🧩 Root Cause Analysis
+
+See [`ROOT_CAUSE_ANALYSIS.md`](ROOT_CAUSE_ANALYSIS.md) for why each error type reached the table, a 5 Whys example, and tested prevention controls. [`prevention_controls.sql`](prevention_controls.sql) adds entry rules (NOT NULL, CHECK constraints, and triggers) to a copy of the table. In testing, the controls rejected all 7 error records and accepted all 5 clean records.
+
 ## 🧰 Tools Used
 
 - SQL (MySQL, AI-assisted development)
@@ -36,7 +40,9 @@ Running the audit queries on the sample data catches all 7 intentional errors. C
 - `schema.sql` - Creates the database and the case records table (safe to re-run)
 - `insert_data.sql` - Loads a sample dataset with intentional errors
 - `queries.sql` - Audit, data integrity, and reporting queries
-- [`REQUIREMENTS.md`](REQUIREMENTS.md) - User stories, acceptance criteria, and traceability for each audit query
+- [`REQUIREMENTS.md`](REQUIREMENTS.md) - Business requirements: scope, data rules, assumptions, user stories, traceability, and success criteria
+- [`ROOT_CAUSE_ANALYSIS.md`](ROOT_CAUSE_ANALYSIS.md) - Root causes, 5 Whys, and prevention control test results
+- `prevention_controls.sql` - Entry rules to stop each error type, tested against the sample data
 - `images/audit_results.png` - Screenshot of the audit query results from the sample data
 
 ## ▶ How to Use It
@@ -44,6 +50,7 @@ Running the audit queries on the sample data catches all 7 intentional errors. C
 1. Run `schema.sql` in MySQL to create the database and table
 2. Run `insert_data.sql` to load sample data
 3. Run `queries.sql` to generate audit results
+4. Optional: run `prevention_controls.sql`, then copy sample records into `cases_controlled` one at a time to see which ones get rejected
 
 ## 📌 Purpose
 

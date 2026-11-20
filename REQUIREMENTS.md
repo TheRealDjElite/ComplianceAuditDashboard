@@ -14,6 +14,20 @@ Case records with missing or invalid data slip into reviews and audits. Errors f
 - **Compliance Auditor:** confirms records meet program rules and are review-ready
 - **Program Supervisor:** tracks case volume and outcomes by program
 
+## 📐 Scope
+
+**In scope**
+- Audit queries for required fields, allowed values, and review date rules
+- List of cases flagged for audit
+- Case counts by program and status, plus the approved total
+- Prevention controls for each root cause at entry (see [`ROOT_CAUSE_ANALYSIS.md`](ROOT_CAUSE_ANALYSIS.md))
+
+**Out of scope**
+- Correcting records. Queries list failing records, and reviewers fix them in the source system
+- Deciding which cases get flagged for audit
+- Review date rule for Denied cases (pending business confirmation)
+- Visual dashboard (in the backlog)
+
 ## 📏 Data Rules
 
 | Field | Rule |
@@ -24,6 +38,21 @@ Case records with missing or invalid data slip into reviews and audits. Errors f
 | Status | Required. Valid values: Approved, Pending, Denied |
 | Review_Date | Required for Approved cases. Optional for Pending cases. Never a future date |
 | Audit_Flag | TRUE marks a case for audit review |
+
+## 📌 Assumptions and Constraints
+
+**Assumptions**
+- SNAP, TANF, and Medicaid are the only valid programs
+- Approved, Pending, and Denied are the only valid statuses
+- Review_Date is the date the case review was completed
+- A blank review date is valid for Pending cases
+- Audit_Flag gets set upstream before records load
+
+**Constraints**
+- Built for MySQL. CHECK constraints in `prevention_controls.sql` need MySQL 8.0.16 or later
+- The `cases` table allows blanks and free text on purpose, so the audit queries have errors to catch
+- US-06 compares against the current date, so test results depend on the date the queries run
+- Results are query output only. No user interface
 
 ## 📝 User Stories
 
@@ -96,10 +125,19 @@ Acceptance criteria:
 | US-06 | 6. Review dates in the future | 1012 | 1 row |
 | US-07 | 7. Case count by program and status, 8. Count of approved cases | All 12 records | Approved total of 3 |
 
+## 🏁 Success Criteria
+
+| ID | Criterion | Result on Sample Data |
+|---|---|---|
+| SC-01 | Every planted error caught by an audit query | 7 of 7 caught |
+| SC-02 | No clean record flagged by an error check (queries 2 to 6) | 0 of 5 flagged |
+| SC-03 | Every audit query traces to a user story | 8 of 8 queries traced |
+| SC-04 | Every root cause has a tested prevention control | 5 of 5 controls tested |
+
 ## 🗂️ Known Limits and Backlog
 
 - **Denied cases with no review date are not checked.** The business rule for Denied cases needs confirmation before a query is added.
-- **Status and program checks are case-insensitive.** MySQL's default collation treats "approved" and "Approved" as the same value, so lowercase entries pass as valid.
+- **Status and program checks are case-insensitive.** MySQL's default collation treats "approved" and "Approved" as the same value, so lowercase entries pass the audit queries. The controls in `prevention_controls.sql` block lowercase values at entry.
 - **Audit_Flag values come from the source data.** No rule in this project decides which cases get flagged for audit.
 - **US-06 depends on the current date.** Test case 1012 stops failing after June 1, 2030, and needs a later date at that point.
 - **No visual dashboard yet.** Results are query output. A Power BI view of audit flags and case counts by program is planned.
